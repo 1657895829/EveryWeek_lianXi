@@ -28,8 +28,12 @@ public class MainActivity extends AppCompatActivity implements MyView{
 
         //创建Presenter层实例,与view层交互
         presenter = new MyPresenter(this);
+
         //get请求方式
         presenter.get();
+
+        //post请求方式
+        //presenter.post();
 
         //设置布局管理器以及布局适配器
         LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
