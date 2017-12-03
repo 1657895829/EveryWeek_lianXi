@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/WeekOne_LianXi" />
+            <option value="$PROJECT_DIR$/WeekOne_MoNi" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EveryWeek_lianXi.iml" filepath="$PROJECT_DIR$/EveryWeek_lianXi.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WeekOne_LianXi/app.iml" filepath="$PROJECT_DIR$/WeekOne_LianXi/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WeekOne_LianXi/WeekOne_LianXi.iml" filepath="$PROJECT_DIR$/WeekOne_LianXi/WeekOne_LianXi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WeekOne_MoNi/WeekOne_MoNi.iml" filepath="$PROJECT_DIR$/WeekOne_MoNi/WeekOne_MoNi.iml" />
     </modules>
   </component>
 </project>
