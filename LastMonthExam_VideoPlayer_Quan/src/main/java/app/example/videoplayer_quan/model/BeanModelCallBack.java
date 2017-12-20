@@ -1,9 +1,9 @@
 package app.example.videoplayer_quan.model;
 
 
-import app.example.videoplayer_quan.bean.Bean;
+import app.example.videoplayer_quan.bean.VideoBean;
 
 public interface BeanModelCallBack {
-    public void success(Bean bean);
+    public void success(VideoBean videoBean);
 
 }

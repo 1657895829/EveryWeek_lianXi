@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import app.example.videoplayer_quan.R;
 import app.example.videoplayer_quan.adapter.MyAdapter;
-import app.example.videoplayer_quan.bean.UserBean;
+import app.example.videoplayer_quan.bean.HomeBean;
 import app.example.videoplayer_quan.presenter.UserPresenter;
 import app.example.videoplayer_quan.utils.BannerImagler;
 import app.example.videoplayer_quan.view.UserView;
@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * 精选页面
+ * 精选页面，展示视频数据
  */
 public class JingXuan01_Fragment extends Fragment implements UserView {
     @BindView(R.id.banner)
@@ -32,16 +32,16 @@ public class JingXuan01_Fragment extends Fragment implements UserView {
     RecyclerView rv;
     Unbinder unbinder;
     private UserPresenter presenter;
-    private List<UserBean.RetBean.ListBean.ChildListBean> list = new ArrayList<>();
+    private List<HomeBean.RetBean.ListBean.ChildListBean> list = new ArrayList<>();
     private List<String> list1 = new ArrayList<>();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.jingxuan_fragment, container, false);
-
         unbinder = ButterKnife.bind(this, view);
 
+        //实例化 p 层 ，获取数据
         presenter = new UserPresenter((UserView) this);
         presenter.success();
         return view;
@@ -62,20 +62,26 @@ public class JingXuan01_Fragment extends Fragment implements UserView {
         }
     }
 
+
     @Override
-    public void success(UserBean user) {
+    public void success(HomeBean user) {
+        //添加视频的数据
         for (int i = 0; i < user.getRet().getList().size(); i++) {
             int length = user.getRet().getList().get(i).getChildList().size();
             for (int j = 0; j < length; j++) {
                 list.add(user.getRet().getList().get(i).getChildList().get(j));
             }
         }
+
+        //获取影片图片，进行无限轮播banner
         for (int i = 0; i < list.size(); i++) {
             list1.add(list.get(i).getPic());
         }
         banner.setImageLoader(new BannerImagler());
         banner.setImages(list1);
         banner.start();
+
+        //设置RecyclerView展示数据的布局管理器以及适配器
         LinearLayoutManager manager=new LinearLayoutManager(getActivity());
         rv.setLayoutManager(manager);
         MyAdapter adapter=new MyAdapter(getActivity(),list);

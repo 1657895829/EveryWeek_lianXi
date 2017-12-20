@@ -1,6 +1,6 @@
 package app.example.videoplayer_quan.presenter;
 
-import app.example.videoplayer_quan.bean.Bean;
+import app.example.videoplayer_quan.bean.VideoBean;
 import app.example.videoplayer_quan.model.BeanModel;
 import app.example.videoplayer_quan.model.BeanModelCallBack;
 import app.example.videoplayer_quan.view.BeanView;
@@ -16,8 +16,8 @@ public class BeanPresenter {
     public void success(String id){
         model.success(new BeanModelCallBack() {
             @Override
-            public void success(Bean bean) {
-                view.success(bean);
+            public void success(VideoBean videoBean) {
+                view.success(videoBean);
             }
         },id);
     }

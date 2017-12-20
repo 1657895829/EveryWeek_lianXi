@@ -1,6 +1,6 @@
 package app.example.videoplayer_quan.presenter;
 
-import app.example.videoplayer_quan.bean.UserBean;
+import app.example.videoplayer_quan.bean.HomeBean;
 import app.example.videoplayer_quan.model.UserModel;
 import app.example.videoplayer_quan.model.UsermodelCallBack;
 import app.example.videoplayer_quan.view.UserView;
@@ -16,7 +16,7 @@ public class UserPresenter {
     public void success(){
         model.success(new UsermodelCallBack() {
             @Override
-            public void success(UserBean user) {
+            public void success(HomeBean user) {
                 view.success(user);
             }
         });
